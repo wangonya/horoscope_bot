@@ -30,3 +30,26 @@ class GetTodaysHoroscope(Action):
         dispatcher.utter_message(response)
 
         return [SlotSet('horoscope_sign', user_horoscope_sign)]
+
+
+class SubscribeUser(Action):
+    def name(self):  # type: () -> Text
+        return "subscribe_user"
+
+    def run(
+        self,
+        dispatcher,  # type: CollectingDispatcher
+        tracker,  # type: Tracker
+        domain,  # type:  Dict[Text, Any]
+    ):  # type: (...) -> List[Dict[Text, Any]]
+
+        subscribe = tracker.get_slot('subscribe')
+
+        if subscribe:
+            response = "You've been successfully subscribed"
+        else:
+            response = "You've been successfully unsubscribed"
+
+        dispatcher.utter_message(response)
+
+        return [SlotSet('subscribe', subscribe)]
