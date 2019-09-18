@@ -32,7 +32,7 @@
 * subscription{"subscribe": "True"}
   - slot{"subscribe": "True"}
   - subscribe_user
-  - slot{"subscribe": true
+  - slot{"subscribe": true}
 
 ## Horoscope with sign provided
 * greeting
@@ -54,3 +54,24 @@
   - slot{"subscribe": "True"}
   - subscribe_user
   - slot{"subscribe": true}
+
+## interactive_story_1
+* greeting
+    - utter_greet
+* get_horoscope
+    - utter_ask_horoscope_sign
+* get_horoscope
+    - get_todays_horoscope
+    - slot{"horoscope_sign": null}
+    - utter_subscribe
+* subscription
+    - action_deactivate_form
+    - form{"name": null}
+    - slot{"requested_slot": null}
+    - quit
+    - utter_greet
+* greeting
+    - utter_greet
+* greeting
+    - utter_ask_horoscope_sign
+* dob_intent

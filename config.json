@@ -1,5 +1,15 @@
 {
+    "language": "en",
     "pipeline": "tensorflow_embedding",
     "path": "./models/nlu",
-    "data": "./data/data.json"
+    "data": "./data/data.json",
+    "policies": [
+    {
+      "name": "MemoizationPolicy"
+    },
+    {
+      "name": "KerasPolicy",
+      "epochs": 200
+    }
+  ]
 }

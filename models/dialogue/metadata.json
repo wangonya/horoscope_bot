@@ -1,0 +1,37 @@
+{
+  "action_fingerprints": {
+    "action_listen": {
+      "slots": [
+        "subscribe",
+        "horoscope_sign"
+      ]
+    },
+    "get_todays_horoscope": {
+      "slots": [
+        "horoscope_sign"
+      ]
+    },
+    "subscribe_user": {
+      "slots": [
+        "subscribe"
+      ]
+    },
+    "utter_subscribe": {
+      "slots": []
+    }
+  },
+  "python": "3.7.4",
+  "max_histories": [
+    5,
+    5
+  ],
+  "ensemble_name": "rasa_core.policies.ensemble.SimplePolicyEnsemble",
+  "policy_names": [
+    "rasa_core.policies.memoization.MemoizationPolicy",
+    "rasa_core.policies.keras_policy.KerasPolicy"
+  ],
+  "trained_at": "20190918-151830",
+  "rasa_core": "0.14.5",
+  "tensorflow": "1.13.2",
+  "sklearn": "0.20.4"
+}
